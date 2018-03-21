@@ -1,8 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+  <h1>{{ title }}</h1>
 </div>
 <div>The purpose of this website is to present projects and technologies I'm familiar with.</div>
 <div>First, the technologies which are used in this website.</div>
@@ -11,3 +9,23 @@
   <item></item>
 </ul>
 <nameinput></nameinput>
+<pipe></pipe>
+<settings [str]='"hello"' [n]='5' (letterChangedEmitter)='onLetterChanged($event)'></settings>
+
+Current letter is {{currentLetter}}
+<ng-container *ngFor='let word of words;'>
+<div *ngIf="word[0]===currentLetter">{{word}}</div>
+</ng-container>
+<div>
+{{y.chaplam}}
+</div>
+<div>
+{{cy.chaplam}}
+</div>
+<lifecycle [text]='currentLetter' [otherText]='otherLetter'></lifecycle>
+<div>
+  <input type="radio" name="options2" value="E" [(ngModel)]="otherLetter" />E
+  <input type="radio" name="options2" value="F" [(ngModel)]="otherLetter" />F
+  <input type="radio" name="options2" value="G" [(ngModel)]="otherLetter" />G
+  <input type="radio" name="options2" value="H" [(ngModel)]="otherLetter" />H
+</div>

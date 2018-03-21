@@ -1,3 +1,4 @@
-<ul *ngFor="let text of texts">
-    <li>{{text}}</li>
-</ul>>
+<ul>
+    <li *ngFor="let text of texts;trackBy:tracky;let i=index;let isFirst=first;let isLast=last">Input {{i}} : <input id={{text.id}} value={{text.id}} /> {{isFirst?'first !':''}} {{isLast?'last !':''}}</li>
+</ul>
+<button (click)='double()'>Add more items</button>
