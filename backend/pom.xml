@@ -22,6 +22,6 @@
 		</dependencies>
 	</dependencyManagement>
 	<modules>
-		<module>portfolio-jetty</module>
+		<module>portfolio-webapp</module>
 	</modules>
 </project>
