@@ -20,7 +20,7 @@
 						<port>4201</port>
 					</httpConnector>
 					<webApp>
-						<contextPath>/portfolio</contextPath>
+						<contextPath>/backend</contextPath>
 					</webApp>
 					<jettyXml>jetty/config.xml</jettyXml>
 				</configuration>

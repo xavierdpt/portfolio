@@ -27,7 +27,7 @@ export class FooService implements IFooService {
     }
 
     getDatabaseServerName() : Observable<string|{}> {
-        return this._http.get("http://localhost:4201/portfolio/dbname").map(
+        return this._http.get("http://localhost:4202/backend/dbname").map(
             (response:Response)=><string>response.json()
         ).catch(this.handleError);
     }
@@ -37,7 +37,7 @@ export class FooService implements IFooService {
     }
 
     getDatabaseServerName2() :  Promise<string|void> {
-        return this._http.get("http://localhost:4201/portfolio/dbname").map(
+        return this._http.get("http://localhost:4202/backend/dbname").map(
             (response:Response)=><string>response.json()
         ).toPromise().catch(this.handleError2);
     }
