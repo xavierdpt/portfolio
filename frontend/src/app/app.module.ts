@@ -1,8 +1,22 @@
+import {
+  applyMiddleware,
+  Store,
+  combineReducers,
+  compose,
+  createStore
+} from 'redux';
+
+import { createLogger } from 'redux-logger';
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
+
+import { NgReduxModule, NgRedux } from '@angular-redux/store';
+
 
 import {TestModule} from './test.module';
 
@@ -35,6 +49,15 @@ const appRoutes : Routes = [
   {path:'**', component: PageNotFound}
 ];
 
+interface IAppState { /* ... */ };
+
+const rootReducer = (s)=>s;
+
+export const store: Store<IAppState> = createStore(
+  rootReducer,
+  applyMiddleware(createLogger())
+);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,9 +80,14 @@ const appRoutes : Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    TestModule
+    TestModule,
+    NgReduxModule
   ],
   providers:[FooService],
   bootstrap: [HomeComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(ngRedux: NgRedux<IAppState>) {
+    ngRedux.provideStore(store);
+  }
+}
