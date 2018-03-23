@@ -2,3 +2,4 @@
     Lifecycle {{text}} {{otherText}} {{afoo}} {{dbname}}
 </div>
 <div *ngIf='message'>{{message}}</div>
+<div *ngIf='subscriptionOpen()'><button class="btn btn-primary" (click)='cancelSubscription()'>Stop</button></div>

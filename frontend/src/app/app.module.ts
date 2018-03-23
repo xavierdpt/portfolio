@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 
+import {TestModule} from './test.module';
 
 import { AppComponent } from './app.component';
 import {Item} from './item/item.component';
@@ -15,10 +16,21 @@ import {Lifecycle} from './lifecycle/lifecycle.component';
 import {Secret} from './secret/secret.component';
 import {PageNotFound} from './pnf/pnf.component';
 import {HomeComponent} from './home/home.component';
+import {SectionArchitectureComponent} from './sections/architecture.component';
+import {Architecture1Component} from './architecture/architecture1.component';
+import {SectionElementsComponent} from './sections/elements.component';
+import {ElementAngularComponent} from './elements/angular.component';
+
+import {FooService} from './services/foo.service';
 
 const appRoutes : Routes = [
-  {path:'home', component:AppComponent}
+  {path:'home', component:AppComponent},
   {path:'secret', component: Secret},
+  {path:'secret/:number', component: Secret},
+  {path:'architecture', component: SectionArchitectureComponent},
+  {path:'architecture/1', component: Architecture1Component},
+  {path:'elements', component: SectionElementsComponent},
+  {path:'elements/angular', component: ElementAngularComponent},
   {path:'', redirectTo: '/home', pathMatch: 'full'},
   {path:'**', component: PageNotFound}
 ];
@@ -34,12 +46,20 @@ const appRoutes : Routes = [
     Lifecycle,
     Secret,
     PageNotFound,
-    HomeComponent
+    HomeComponent,
+    SectionArchitectureComponent,
+    Architecture1Component,
+    SectionElementsComponent,
+    ElementAngularComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes)
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(appRoutes),
+    TestModule
   ],
-  providers: [],
+  providers:[FooService],
   bootstrap: [HomeComponent]
 })
 export class AppModule { }
