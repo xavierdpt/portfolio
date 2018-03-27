@@ -1,0 +1,45 @@
+<div style="text-align:center">
+    <h1>{{ title }}</h1>
+  </div>
+  <div>The purpose of this website is to present projects and technologies I'm familiar with.</div>
+  <div>First, the technologies which are used in this website.</div>
+  <ul>
+    <li><span class="intro">Angular JS</span> is a quite unconventional and popular web application framework, which is best developped with suitable tools such as Visual Studio Code for the IDE, TypeScript for the programming language, and @angular/cli npm module for starting with a pretty good configuration.</li>
+    <item></item>
+  </ul>
+  <nameinput></nameinput>
+  <pipe></pipe>
+  <settings [str]='"hello"' [n]='5' (letterChangedEmitter)='onLetterChanged($event)'></settings>
+  
+  Current letter is {{currentLetter}}
+  <ng-container *ngFor='let word of words;'>
+  <div *ngIf="word[0]===currentLetter">{{word}}</div>
+  </ng-container>
+  <div>
+  {{y.chaplam}}
+  </div>
+  <div>
+  {{cy.chaplam}}
+  </div>
+  <lifecycle [text]='currentLetter' [otherText]='otherLetter'></lifecycle>
+  <div>
+    <input type="radio" name="options2" value="E" [(ngModel)]="otherLetter" />E
+    <input type="radio" name="options2" value="F" [(ngModel)]="otherLetter" />F
+    <input type="radio" name="options2" value="G" [(ngModel)]="otherLetter" />G
+    <input type="radio" name="options2" value="H" [(ngModel)]="otherLetter" />H
+  </div>
+  <a href="https://www.youtube.com/playlist?list=PL6n9fhu94yhWqGD8BuKuX-VTKqlNBj-m6">YouTube : <i>Angular 2 tutorial for beginners</i> by kudvenkat : 43 videos
+  </a>
+  <ul>
+    <li>Components</li>
+    <li>Interpolation, property, class, style and event bindings</li>
+    <li>Two way data binding</li>
+    <li>Structural directives <b>ngIf</b> and <b>ngFor</b></li>
+    <li>Predefined and custom pipes</li>
+    <li>Some lifecycle hooks</li>
+    <li>Services</li>
+    <li>Routing</li>
+    <li>Dependency injection</li>
+    <li>Observables and promises</li>
+  </ul>
+  <p-button label="Click" styleClass="ui-button-info"></p-button>

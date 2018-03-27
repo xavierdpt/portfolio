@@ -15,8 +15,9 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 
-import { NgReduxModule, NgRedux } from '@angular-redux/store';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import { NgReduxModule, NgRedux } from '@angular-redux/store';
 
 import {TestModule} from './test.module';
 
@@ -34,6 +35,8 @@ import {SectionArchitectureComponent} from './sections/architecture.component';
 import {Architecture1Component} from './architecture/architecture1.component';
 import {SectionElementsComponent} from './sections/elements.component';
 import {ElementAngularComponent} from './elements/angular.component';
+
+import {ButtonModule} from 'primeng/button';
 
 import {FooService} from './services/foo.service';
 
@@ -77,11 +80,13 @@ export const store: Store<IAppState> = createStore(
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
     TestModule,
-    NgReduxModule
+    NgReduxModule,
+    ButtonModule
   ],
   providers:[FooService],
   bootstrap: [HomeComponent]
