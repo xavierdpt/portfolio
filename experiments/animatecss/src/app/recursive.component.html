@@ -1,0 +1,10 @@
+<div style="text-align:center">
+<div>
+    <select [(ngModel)]='effect'>
+        <option *ngFor="let effect of effects" value='{{effect}}'>{{effect}}</option>
+    </select>
+    <input type="number" [(ngModel)]='depth' />
+</div>
+<div style="overflow:hidden;padding-top:180px;padding-bottom:180px;">
+    <depth [size]="50+20*depth" [topDepth]="depth" [effect]="effect"></depth>
+</div>

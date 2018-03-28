@@ -1,0 +1,10 @@
+<div
+    *ngIf="size<70"
+    style="padding:10px; outline:solid 1px black; display:inline-block;" style.width="{{size+'px'}}" style.height="{{size+'px'}}" class='animated infinite {{effect}}'>
+    <box [classname]='effect'></box>
+</div>
+<div
+    *ngIf="size>=70"
+    style="padding:10px; outline:solid 1px black; display:inline-block;" style.width="{{size+'px'}}" style.height="{{size+'px'}}" class='animated infinite {{effect}}'>
+    <depth [size]="size-20" [effect]='effect' [topDepth]='topDepth'></depth>
+</div>

@@ -1,0 +1,11 @@
+<div *ngFor="let effect of effects" style="overflow:hidden">
+<div
+    style="text-align:center;padding-top:30px;padding-bottom:30px;border:solid 1px black; overflow:hidden"
+    [ngClass]="clicked[effect]?'animated '+effect:'red'"
+>
+    <div style="padding-bottom:30px;"><button (click)='handleClick(effect)'>{{effect}}</button></div>
+    <div style="display:inline-block">
+        <box [classname]="effect"></box>
+    </div>
+</div>
+</div>
