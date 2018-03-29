@@ -1,3 +1,55 @@
-.intro {
-    font-weight:bold;
+.header {
+    position:absolute;
+    top:0px;
+    height:50px;
+    width:100%;
+    background:cornflowerblue;
+    vertical-align:middle;
+    font-weight:600;
+    font-size:18px;
+    color:white;
+    padding-left:30px;
+}
+
+.header:before {
+    content:'';
+    display:inline-block;
+    height:100%;
+    width:0;
+    vertical-align:middle;
+}
+
+.title {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.navbar {
+    display:inline-block;
+    vertical-align:middle;
+    padding-left:30px;
+}
+
+.navlink {
+    display:inline-block;
+    cursor:pointer;
+}
+
+.navlink:hover {
+    color:yellow;
+    outline:solid 1px yellow;
+}
+
+.content {
+    padding-top:50px;
+}
+
+h1 {
+    margin:0;
+    padding:0;
+}
+
+a {
+    text-decoration:none;
+    color:cornflowerblue;
 }
