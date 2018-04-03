@@ -1,0 +1,13 @@
+<div class="outer">
+  <div style="text-align:center;vertical-align:middle;height:100%;">
+    <div style="width:0;height:100%;vertical-align:middle;display:inline-block"></div>
+    <div class="{{'animated infinite '+getEffect()}}" style="display:inline-block;vertical-align:middle">
+      <sh-box></sh-box>
+    </div>
+</div>
+<div style="position:absolute;top:0;left:0">
+  <ul>
+    <li *ngFor="let mapping of getMappingsAsArray()">{{mapping.ch}} : {{mapping.effect}}</li>
+  </ul>
+</div>
+</div>

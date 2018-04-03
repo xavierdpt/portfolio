@@ -8,13 +8,15 @@ import {RecursiveComponent} from './recursive.component';
 import {DepthComponent} from './depth.component';
 
 import { BoxModule } from 'shcmp';
+import { KeyboardComponent } from './keyboard/keyboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EffectsComponent,
     RecursiveComponent,
-    DepthComponent
+    DepthComponent,
+    KeyboardComponent
   ],
   imports: [
     BrowserModule,
