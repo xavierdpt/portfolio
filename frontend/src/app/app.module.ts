@@ -37,11 +37,14 @@ import {SectionElementsComponent} from './sections/elements.component';
 import {ElementAngularComponent} from './elements/angular.component';
 
 import {ButtonModule} from 'primeng/button';
+import {CodeHighlighterModule} from 'primeng/codehighlighter';
 
 import {FooService} from './services/foo.service';
+import { SecurityComponent } from './security/security.component';
 
 const appRoutes : Routes = [
   {path:'home', component:AppComponent},
+  {path:'security', component:SecurityComponent},
   {path:'secret', component: Secret},
   {path:'secret/:number', component: Secret},
   {path:'architecture', component: SectionArchitectureComponent},
@@ -76,7 +79,8 @@ export const store: Store<IAppState> = createStore(
     SectionArchitectureComponent,
     Architecture1Component,
     SectionElementsComponent,
-    ElementAngularComponent
+    ElementAngularComponent,
+    SecurityComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +90,8 @@ export const store: Store<IAppState> = createStore(
     RouterModule.forRoot(appRoutes),
     TestModule,
     NgReduxModule,
-    ButtonModule
+    ButtonModule,
+    CodeHighlighterModule
   ],
   providers:[FooService],
   bootstrap: [HomeComponent]
