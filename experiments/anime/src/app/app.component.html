@@ -1,6 +1,6 @@
-<div style="text-align:center;padding-top:10px; padding-bottom:10px;overflow:hidden;" *ngFor="let text of texts">
-    <box [text]="text"></box>
-</div>
-<div style="text-align:center">
-  <button (click)="handleClick()">Click me</button>
-</div>
+<nav>
+    <a routerLink="/gallery">Gallery</a>
+    <a routerLink="/tatata">Tatata</a>
+    <a routerLink="/something">Something</a>
+</nav>
+<router-outlet></router-outlet>

@@ -22,7 +22,7 @@
         "styles.css"
       ],
       "scripts": [
-        "../node_modules/animejs/anime.min.js"
+      
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

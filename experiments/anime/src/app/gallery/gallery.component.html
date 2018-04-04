@@ -1,0 +1,117 @@
+<div id="box1" class="box" style="display:inline-block;padding:20px;">
+    <sh-box></sh-box>
+</div>
+
+<div id="box2" class="box">
+    <sh-box></sh-box>
+</div>
+
+{{obj.charged}}
+
+<input type="number" value="0" id="input" />
+
+<div id="svg">
+    <svg width="128" height="128" viewBox="0 0 128 128">
+        <circle cx="40" cy="40" r="10" stroke="black" stroke-width="3" fill="red" />
+        <circle cx="80" cy="80" r="40" stroke="black" stroke-width="3" fill="red" />
+    </svg>
+</div>
+
+<ul>
+    <li>
+        <button (click)="cssSelector()">CSS Selector</button>
+    </li>
+    <li>
+        <button (click)="domNode()">DOM Node</button>
+    </li>
+    <li>
+        <button (click)="nodeList()">Node List</button>
+    </li>
+    <li>
+        <button (click)="jsObject()">JavaScript Object</button>
+    </li>
+    <li>
+        <button (click)="jsArray()">JavaScript Array</button>
+    </li>
+    <li>
+        <button (click)="cssProperty()">CSS</button>
+    </li>
+    <li>
+        <button (click)="cssTransform()">CSS Transforms</button>
+    </li>
+    <li>
+        <button (click)="domAttributes()">DOM Attributes</button>
+    </li>
+    <li>
+        <button (click)="svgAttributes()">SVG Attributes</button>
+    </li>
+    <li>
+        <button (click)="duration()">Duration</button>
+    </li>
+    <li>
+        <button (click)="delay()">Delay</button>
+    </li>
+    <li>
+        <button (click)="easing()">Easing</button>
+    </li>
+    <li>
+        <button (click)="specific()">Specific</button>
+    </li>
+    <li>
+        <button (click)="functionBased()">Function Based</button>
+    </li>
+    <li>
+        <button (click)="alternate()">Alternate</button>
+    </li>
+    <li>
+        <button (click)="reverse()">Reverse</button>
+    </li>
+    <li>
+        <button (click)="loop()">Loop</button>
+    </li>
+    <li>
+        <button (click)="relative()">Relative</button>
+    </li>
+    <li>
+        <button (click)="color()">Color</button>
+    </li>
+    <li>
+        <button (click)="initialValue()">Initial value</button>
+    </li>
+    <li>
+        <button (click)="functionValue()">Function value</button>
+    </li>
+    <li>
+        <button (click)="keyframes()">Keyframes</button>
+    </li>
+    <li>
+        <button (click)="timeline()">Timeline</button>"
+    </li>
+    <li>
+        <button (click)="timelineRelativeOffset()">Timeline with relative offset</button>
+    </li>
+    <li>
+        <button (click)="timelineAbsoluteOffset()">Timeline with absolute offset</button>
+    </li>
+    <li>
+        <button (click)="timelineGlobalParameters()">Timeline with global parameters</button>
+    </li>
+    <li>
+        <button (click)="playPause()">Play / Pause</button>
+    </li>
+    <li>
+        <button (click)="restart()">Restart</button>
+    </li>
+    <li>
+        <button (click)="reverse2()">Reverse</button>
+    </li>
+    <li>
+        <button (click)="seek()">Seek</button>
+    </li>
+    <li>
+        <button (click)="callbacks()">Callbacks</button>
+    </li>
+    <li>
+        <button (click)="promise()">Promise</button>
+    </li>
+</ul>
