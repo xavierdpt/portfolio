@@ -1,5 +1,27 @@
 import { Component, OnInit, HostListener, Input } from '@angular/core';
 
+import { createSelector } from 'reselect'
+
+const getEffects = (effects) => effects;
+
+const getMappingS = createSelector([getEffects], (effects) => {
+  console.log("Recomputing getMappingS");
+  const mapping = {};
+  for (let i = 0; i < 26; ++i) {
+    mapping[String.fromCharCode(i + 97)] = effects[i];
+  }
+  return mapping;
+});
+
+const getMappingAsArrayS = createSelector([getMappingS], (mapping)=>{
+  console.log("Recomputing getMappingAsArrayS");
+  const mappingAsArray = [];
+  for (const k in mapping) {
+    mappingAsArray.push({ ch: k, effect: mapping[k] });
+  }
+  return mappingAsArray;
+});
+
 @Component({
   selector: 'keyboard',
   templateUrl: './keyboard.component.html',
@@ -8,13 +30,9 @@ import { Component, OnInit, HostListener, Input } from '@angular/core';
 export class KeyboardComponent implements OnInit {
 
   @Input()
-  effects : string[];
+  effects: string[];
 
-  effect : string = "";
-
-  mapping : any = null;
-
-  mappingAsArray : any[] = null;
+  effect: string = "";
 
   constructor() { }
 
@@ -22,37 +40,21 @@ export class KeyboardComponent implements OnInit {
   }
 
   @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event : KeyboardEvent)  : void {
-    this.effect=this.getMappings()[event.key];
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    this.effect = this.getMappings()[event.key];
     console.log(this.effect);
+    console.log(this.effects.length)
   }
 
-  getEffect() : string {
+  getEffect(): string {
     return this.effect;
   }
 
-  getMappings() : any {
-    if(this.mapping) {
-      return this.mapping;
-    }
-    const mapping = {};
-    for(let i=0;i<26;++i) {
-      mapping[String.fromCharCode(i+97)] = this.effects[i];
-    }
-    this.mapping = mapping;
-    return mapping;
+  getMappings(): any {
+    return getMappingS(this.effects);
   }
-  
-  getMappingsAsArray() : any[] {
-    if(this.mappingAsArray) {
-      return this.mappingAsArray;
-    }
-    const mapping = this.getMappings();
-    const mappingAsArray = [];
-    for(const k in mapping) {
-      mappingAsArray.push({ch:k,effect:mapping[k]});
-    }
-    this.mappingAsArray = mappingAsArray;
-    return mappingAsArray;
+
+  getMappingsAsArray(): any[] {
+    return getMappingAsArrayS(this.effects);
   }
 }
