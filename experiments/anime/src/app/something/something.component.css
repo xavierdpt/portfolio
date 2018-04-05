@@ -1,0 +1,60 @@
+.header {
+    background:aliceblue;
+    height:60px;
+    vertical-align:middle;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.header:after {
+    content:'';
+    width:0;
+    height:100%;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+#header-name {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.message-block {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    vertical-align:middle;
+    text-align:center;
+}
+.phantom {
+    width:0;
+    height:100%;
+    vertical-align:middle;
+    display:inline-block;
+}
+.message {
+    font-size:5rem;
+    vertical-align:middle;
+    display:inline-block;
+}
+
+.message.smaller {
+    font-size:3rem;
+}
+
+.placeholder {
+    position:relative;
+}
+
+.inline.placeholder {
+    display:inline-block;
+    white-space:nowrap;
+}
+
+.placeholder .content {
+    visibility:hidden;
+}
+
+
