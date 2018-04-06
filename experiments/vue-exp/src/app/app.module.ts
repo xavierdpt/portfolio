@@ -4,17 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SomethingComponent } from './something/something.component';
-import {YoupiComponent} from './youpi/youpi.component';
-
-import { WrapperDirective } from './wrapper.directive';
-
+import { ScComponent } from './sc/sc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SomethingComponent,
-    WrapperDirective,
-    YoupiComponent
+    ScComponent
   ],
   imports: [
     BrowserModule
